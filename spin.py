@@ -1,16 +1,9 @@
-# $ sudo pip3 install adafruit-blinka
+import RPi.GPIO as GPIO #GPIO Library
 
-import time
-import board
-import digitalio
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-# set up door sensor
-door_sensor = digitalio.DigitalInOut(board.D23)
-door_sensor.direction = digitalio.Direction.INPUT
-
-while True:
-
-    if door_sensor.value:
-        print("DOOR ALARM!")
-
-    time.sleep(0.5)
+while True
+    if GPIO.input(10) == GPIO.HIGH:
+        print("Button pushed")
