@@ -22,6 +22,7 @@ while True:
     buttonState = GPIO.input(button)
 
     if buttonState == False:
+        print("Button has been pressed.")
         ledOn()
     else:
         ledOff()
