@@ -7,7 +7,7 @@ GPIO.setmode(GPIO.BOARD)
 led = 12
 button = 16
 
-GPIO.setup(led)
+GPIO.setup(led, GPIO.OUT)
 GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 # Turn LED on
