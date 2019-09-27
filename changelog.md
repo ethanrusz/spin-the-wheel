@@ -5,6 +5,5 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [unreleased] 2019-09-24
 ### Added
-- Door sensor setup.
-- Changelog.
+- LED on and off functions
 - Information in `README.md`.
