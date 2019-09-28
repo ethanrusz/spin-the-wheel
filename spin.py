@@ -25,7 +25,7 @@ def red():
     sleep(1)
     GPIO.output(16, GPIO.LOW)
 
-while True
+while True:
     green()
     red()
     sleep(1)
