@@ -1,29 +1,31 @@
 import RPi.GPIO as GPIO
+from time import sleep
 
-# Set up GPIO
+# Configure board and set warnings
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 
-# Define button pins
-led = 16
-button = 18
+# LED output config
+GPIO.setup(16, GPIO.OUT, initial = GPIO.LOW) # Green LED
+GPIO.setup(18, GPIO.OUT, initial = GPIO.LOW) # Red LED
 
-GPIO.setup(led, GPIO.OUT)
-GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+# Blink green for 1s
+def green():
+    GPIO.output(16, GPIO.HIGH)
+    sleep(1)
+    GPIO.output(16, GPIO.LOW)
 
-# Turn LED on
+# Double blink red 1s
+def red():
+    GPIO.output(16, GPIO.HIGH)
+    sleep(1)
+    GPIO.output(16, GPIO.LOW)
+    sleep(.5)
+    GPIO.output(16, GPIO.HIGH)
+    sleep(1)
+    GPIO.output(16, GPIO.LOW)
 
-def ledOn():
-    GPIO.output(led, GPIO.HIGH)
-
-# Turn LED off
-def ledOff():
-    GPIO.output(led, GPIO.LOW)
-
-while True:
-    buttonState = GPIO.input(button)
-
-    if buttonState == False:
-        print("Button has been pressed.")
-        ledOn()
-    else:
-        ledOff()
+while True
+    green()
+    red()
+    sleep(1)

@@ -5,5 +5,5 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [unreleased] 2019-09-24
 ### Added
-- LED on and off functions
+- Green and red blink functions
 - Information in `README.md`.
