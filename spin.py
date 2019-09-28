@@ -17,15 +17,15 @@ def green():
 
 # Double blink red 1s
 def red():
-    GPIO.output(16, GPIO.HIGH)
+    GPIO.output(18, GPIO.HIGH)
     sleep(1)
-    GPIO.output(16, GPIO.LOW)
+    GPIO.output(18, GPIO.LOW)
     sleep(.5)
-    GPIO.output(16, GPIO.HIGH)
+    GPIO.output(18, GPIO.HIGH)
     sleep(1)
-    GPIO.output(16, GPIO.LOW)
+    GPIO.output(18, GPIO.LOW)
 
 while True:
     green()
     red()
-    sleep(1)
+    sleep(2)
