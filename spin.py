@@ -38,6 +38,7 @@ def exit():
         sleep(.075)
         GPIO.output(16, GPIO.LOW)
         sleep(.075)
+    sys.exit()
 
 # Main, run forever
 while True:
