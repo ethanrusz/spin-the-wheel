@@ -37,7 +37,6 @@ def red():
 def bones():
         audio = "spook.mp3"
         os.system("mpg123 " + audio)
-        flag = 1
 
 def exit():
     for _ in range(25):
@@ -62,6 +61,8 @@ while True:
         if flag == 0:
             bones()
 
+        flag = 1
+        
     kill = GPIO.input(15)
     if kill == False: # Kill button is pushed
         exit()
