@@ -15,16 +15,17 @@ GPIO.setup(22, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Door Sensor
 GPIO.setup(15, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Kill Button
 
 # Flag to track audio
-flag = 0
+flag = 1
 
-# Blink green for 1s
+# Double blink green
 def green():
-    GPIO.output(16, GPIO.HIGH)
-    sleep(1)
-    GPIO.output(16, GPIO.LOW)
-    sleep(1)
+    for _ in range(2):
+        GPIO.output(16, GPIO.HIGH)
+        sleep(1)
+        GPIO.output(16, GPIO.LOW)
+        sleep(1)
 
-# Double blink red 1s
+# Double blink red
 def red():
     for _ in range(2):
         GPIO.output(18, GPIO.HIGH)
@@ -37,6 +38,7 @@ def bones():
         audio = "bones.mp3"
         os.system("mpg123 " + audio)
 
+# Strobe red and green, then exit
 def exit():
     for _ in range(25):
         GPIO.output(18, GPIO.HIGH)
