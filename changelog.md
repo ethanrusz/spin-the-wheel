@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Kill switch in `exit()`.
 - Rough version of `bones.wav`.
+- Audio trigger.
 
 ### Changed
 - Made `red()` more efficient.

@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 from time import sleep
+import os # Install mpg123 first
 
 # Configure board and set warnings
 GPIO.setwarnings(False)
@@ -27,6 +28,11 @@ def red():
         sleep(1)
         GPIO.output(18, GPIO.LOW)
         sleep(.5)
+
+# Play rattle me bones audio file
+def bones():
+    audio = "bones.wav"
+    os.system("mpg123 " + audio)
 
 def exit():
     for _ in range(25):
