@@ -49,5 +49,5 @@ while True:
         red()
 
     kill = GPIO.input(15)
-    if kill == True: # Kill button is pushed
+    if kill == False: # Kill button is pushed
         exit()
