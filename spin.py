@@ -16,6 +16,7 @@ GPIO.setup(15, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Kill Button
 
 # Blink green for 1s
 def green():
+    flag = 0
     GPIO.output(16, GPIO.HIGH)
     sleep(1)
     GPIO.output(16, GPIO.LOW)
@@ -25,14 +26,16 @@ def green():
 def red():
     for _ in range(2):
         GPIO.output(18, GPIO.HIGH)
-        sleep(1)
-        GPIO.output(18, GPIO.LOW)
         sleep(.5)
+        GPIO.output(18, GPIO.LOW)
+        sleep(.25)
 
 # Play rattle me bones audio file
 def bones():
-    audio = "bones.mp3"
-    os.system("mpg123 " + audio)
+    if flag == 0
+        audio = "spook.mp3"
+        os.system("mpg123 " + audio)
+        flag = 1
 
 def exit():
     for _ in range(25):
