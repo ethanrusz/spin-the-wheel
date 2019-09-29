@@ -32,7 +32,7 @@ def red():
 
 # Play rattle me bones audio file
 def bones():
-    if flag == 0
+    if flag == 0:
         audio = "spook.mp3"
         os.system("mpg123 " + audio)
         flag = 1
