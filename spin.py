@@ -54,7 +54,7 @@ while True:
     doorOpen = GPIO.input(22)
     # Respond to door state
     if doorOpen == False:
-        if flag == 1
+        if flag == 1:
             green()
             flag = 0
     else:
