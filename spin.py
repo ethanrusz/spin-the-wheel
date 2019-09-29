@@ -31,7 +31,7 @@ def red():
 
 # Play rattle me bones audio file
 def bones():
-    audio = "bones.wav"
+    audio = "bones.mp3"
     os.system("mpg123 " + audio)
 
 def exit():
