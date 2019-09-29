@@ -59,7 +59,7 @@ while True:
         green()
     else:
         red()
-        if flag = 0:
+        if flag == 0:
             bones()
 
     kill = GPIO.input(15)
