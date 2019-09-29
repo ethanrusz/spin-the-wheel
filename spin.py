@@ -14,6 +14,9 @@ GPIO.setup(18, GPIO.OUT, initial = GPIO.LOW) # Red LED
 GPIO.setup(22, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Door Sensor
 GPIO.setup(15, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Kill Button
 
+# Flag to track audio
+flag = 0
+
 # Blink green for 1s
 def green():
     flag = 0
@@ -32,7 +35,6 @@ def red():
 
 # Play rattle me bones audio file
 def bones():
-    if flag == 0:
         audio = "spook.mp3"
         os.system("mpg123 " + audio)
         flag = 1
@@ -57,7 +59,8 @@ while True:
         green()
     else:
         red()
-        bones()
+        if flag = 0:
+            bones()
 
     kill = GPIO.input(15)
     if kill == False: # Kill button is pushed
