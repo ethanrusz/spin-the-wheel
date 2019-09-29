@@ -19,7 +19,6 @@ flag = 0
 
 # Blink green for 1s
 def green():
-    flag = 0
     GPIO.output(16, GPIO.HIGH)
     sleep(1)
     GPIO.output(16, GPIO.LOW)
@@ -55,6 +54,7 @@ while True:
     doorOpen = GPIO.input(22)
     # Respond to door state
     if doorOpen == False:
+        flag = 0
         green()
     else:
         red()
@@ -62,7 +62,7 @@ while True:
             bones()
 
         flag = 1
-        
+
     kill = GPIO.input(15)
     if kill == False: # Kill button is pushed
         exit()
