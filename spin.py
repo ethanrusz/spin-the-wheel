@@ -54,6 +54,7 @@ while True:
         green()
     else:
         red()
+        bones()
 
     kill = GPIO.input(15)
     if kill == False: # Kill button is pushed
