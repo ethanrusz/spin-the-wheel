@@ -61,6 +61,7 @@ def muted():
     sleep(15)
     GPIO.output(18, GPIO.LOW)
     flag = 1
+    green()
 
 # Confirm code is under main function
 if __name__ == "__main__":
