@@ -90,5 +90,5 @@ if __name__ == "__main__":
             exit()
 
         mute = GPIO.input(37)
-        if mute == False # mute has been pushed
+        if mute == False: # mute has been pushed
             mute()
