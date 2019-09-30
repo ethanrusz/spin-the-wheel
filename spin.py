@@ -55,7 +55,7 @@ def exit():
     sys.exit()
 
 # Disable rig for 15s
-def mute():
+def muted():
     flag = 2
     GPIO.output(18, GPIO.HIGH)
     sleep(15)
@@ -92,4 +92,4 @@ if __name__ == "__main__":
 
         mute = GPIO.input(37)
         if mute == False: # mute has been pushed
-            mute()
+            muted()
