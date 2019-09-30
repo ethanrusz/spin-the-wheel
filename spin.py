@@ -66,10 +66,9 @@ if __name__ == "__main__":
                 green()
                 flag = 0
         else: # Door is opened
-            red()
+            redPro.start()
             if flag == 0:
                 # Start threaded functions
-                redPro.start()
                 bonesPro.start()
                 # Join threads to sync blinking
                 redPro.join()
