@@ -14,6 +14,7 @@ GPIO.setup(18, GPIO.OUT, initial = GPIO.LOW) # Red LED
 # Input config
 GPIO.setup(22, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Door Sensor
 GPIO.setup(15, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Kill Button
+GPIO.setup(37, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Mute Button
 
 # Flag to track audio
 flag = 1
@@ -52,6 +53,14 @@ def exit():
         sleep(.075)
     sys.exit()
 
+# Disable rig for 15s
+def mute():
+    flag = 2
+    GPIO.output(18, GPIO.HIGH)
+    sleep(15)
+    GPIO.output(18, GPIO.LOW)
+    flag = 1
+
 # Confirm code is under main function
 if __name__ == "__main__":
     # Main, run forever
@@ -79,3 +88,7 @@ if __name__ == "__main__":
         kill = GPIO.input(15)
         if kill == False: # Kill button is pushed
             exit()
+
+        mute = GPIO.input(37)
+        if mute == False # mute has been pushed
+            mute()
