@@ -41,7 +41,7 @@ def bones():
 
 # Strobe red and green, then exit
 def exit():
-    for _ in range(25):
+    for _ in range(20):
         GPIO.output(18, GPIO.HIGH)
         sleep(.075)
         GPIO.output(18, GPIO.LOW)
