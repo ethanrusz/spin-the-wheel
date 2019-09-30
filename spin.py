@@ -74,6 +74,6 @@ if __name__ == "__main__":
                 bonesPro.join()
             flag = 1
 
-    kill = GPIO.input(15)
-    if kill == False: # Kill button is pushed
-        exit()
+        kill = GPIO.input(15)
+        if kill == False: # Kill button is pushed
+            exit()
