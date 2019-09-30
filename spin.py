@@ -74,7 +74,6 @@ if __name__ == "__main__":
                 # Join threads to sync blinking
                 redPro.join()
                 bonesPro.join()
-                redPro.terminate()
             flag = 1
 
         kill = GPIO.input(15)
