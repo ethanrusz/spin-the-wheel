@@ -69,6 +69,8 @@ if __name__ == "__main__":
             redPro.start()
             if flag == 0:
                 bonesPro.start()
+                redPro.join()
+                bonesPro.join()
             flag = 1
 
     kill = GPIO.input(15)
