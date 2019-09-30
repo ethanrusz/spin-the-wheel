@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 import os # You must manually install mpg123 first
 from multiprocessing import Process # Import process for threads
+import sys
 
 # Configure board and set warnings
 GPIO.setwarnings(False)
@@ -37,8 +38,8 @@ def red():
 
 # Play rattle me bones audio file
 def bones():
-        audio = "bones.mp3"
-        os.system("mpg123 " + audio)
+    audio = "bones.mp3"
+    os.system("mpg123 " + audio)
 
 # Strobe red and green, then exit
 def exit():
