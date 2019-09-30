@@ -6,10 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [unreleased] - 2019-09-30
 ### Added
-- Multiprocessing.
+- Multiprocessing for door open state.
 
 ### Changed
 - Red LED no longer stops flashing while audio is playing.
+- Shortened `exit()` blink duration.
 
 ### Fixed
 - Cleaned up messy loops.
