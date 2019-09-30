@@ -66,8 +66,9 @@ if __name__ == "__main__":
                 green()
                 flag = 0
         else:
-            redPro.start()
+            red()
             if flag == 0:
+                redPro.start()
                 bonesPro.start()
                 redPro.join()
                 bonesPro.join()
