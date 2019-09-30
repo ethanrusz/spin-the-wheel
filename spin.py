@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
-import os # Install mpg123 first
+import os # You must manually install mpg123 first
+from multiprocessing import Process # Import process for threads
 
 # Configure board and set warnings
 GPIO.setwarnings(False)
@@ -40,7 +41,7 @@ def bones():
 
 # Strobe red and green, then exit
 def exit():
-    for _ in range(25):
+    for _ in range(20):
         GPIO.output(18, GPIO.HIGH)
         sleep(.075)
         GPIO.output(18, GPIO.LOW)
@@ -51,21 +52,30 @@ def exit():
         sleep(.075)
     sys.exit()
 
-# Main, run forever
-while True:
-    doorOpen = GPIO.input(22)
-    # Respond to door state
-    if doorOpen == False:
-        if flag == 1:
-            green()
-            flag = 0
-    else:
-        red()
-        if flag == 0:
-            bones()
+# Confirm code is under main function
+if __name__ == "__main__":
+    # Main, run forever
+    while True:
+        # Define door state and multiprocessing
+        redPro = Process(target = red)
+        bonesPro = Process(target = bones)
+        doorOpen = GPIO.input(22)
+        # Respond to door state
+        if doorOpen == False:
+            if flag == 1:
+                green()
+                flag = 0
+        else: # Door is opened
+            red()
+            if flag == 0:
+                # Start threaded functions
+                redPro.start()
+                bonesPro.start()
+                # Join threads to sync blinking
+                redPro.join()
+                bonesPro.join()
+            flag = 1
 
-        flag = 1
-
-    kill = GPIO.input(15)
-    if kill == False: # Kill button is pushed
-        exit()
+        kill = GPIO.input(15)
+        if kill == False: # Kill button is pushed
+            exit()
