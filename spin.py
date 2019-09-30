@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
-import os # Install mpg123 first
+import os # You must manually install mpg123 first
+from multiprocessing import Process # Import process for threads
 
 # Configure board and set warnings
 GPIO.setwarnings(False)
@@ -51,20 +52,24 @@ def exit():
         sleep(.075)
     sys.exit()
 
-# Main, run forever
-while True:
-    doorOpen = GPIO.input(22)
-    # Respond to door state
-    if doorOpen == False:
-        if flag == 1:
-            green()
-            flag = 0
-    else:
-        red()
-        if flag == 0:
-            bones()
-
-        flag = 1
+# Confirm code is under main function
+if __name__ == "__main__":
+    # Main, run forever
+    while True:
+        # Define door state and multiprocessing
+        redPro = Process(target = red)
+        bonesPro = Process(target = bones)
+        doorOpen = GPIO.input(22)
+        # Respond to door state
+        if doorOpen == False:
+            if flag == 1:
+                green()
+                flag = 0
+        else:
+            redPro.start()
+            if flag == 0:
+                bonesPro.start()
+            flag = 1
 
     kill = GPIO.input(15)
     if kill == False: # Kill button is pushed
