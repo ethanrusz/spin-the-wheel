@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2019-10-01
+### Added
+- Added a fifteen second exit mute.
+
+## Fixed
+- Bad indentation in `bones()`.
+
 ## [1.2.0] - 2019-09-30
 ### Added
 - Multiprocessing for open door state.
