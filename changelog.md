@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added a fifteen second exit mute.
 
-## Fixed
+### Fixed
 - Bad indentation in `bones()`.
 
 ## [1.2.0] - 2019-09-30
