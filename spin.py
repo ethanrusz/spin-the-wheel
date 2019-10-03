@@ -50,8 +50,12 @@ def red():
 # Play audio file
 def bones():
     if randomMode:
-        # audio = random.choice(os.listdir("./audio"))
-        print("Audio set to: " + audio)
+        try:
+            audio = random.choice(os.listdir("./audio"))
+            print("Audio set to: " + audio)
+        except:
+            print("Oops! Something went wrong.\nReverting to Classic Mode")
+            togRandom()
     else:
         audio = "./audio/bones.mp3"
     os.system("mpg123 " + audio)
@@ -80,12 +84,14 @@ def muted():
 
 # Toggle random mode
 def togRandom():
-    if randomMode:
-        randomMode = True
-        print("Random Mode")
     if not randomMode:
+        randomMode = True
+        print("Random Mode on")
+        green()
+    if randomMode:
         randomMode False
-        print("Classic Mode")
+        red()
+        print("Random Mode off")
 
 # Confirm code is under main function
 if __name__ == "__main__":
