@@ -49,7 +49,7 @@ def red():
 
 # Play audio file
 def bones():
-    if random == 1:
+    if randomMode:
         # audio = random.choice(os.listdir("./audio"))
         print("Audio set to: " + audio)
     else:
@@ -80,10 +80,10 @@ def muted():
 
 # Toggle random mode
 def togRandom():
-    if randomMode False:
+    if randomMode:
         randomMode = True
         print("Random Mode")
-    if randomMode True:
+    if not randomMode:
         randomMode False
         print("Classic Mode")
 
