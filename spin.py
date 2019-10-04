@@ -104,6 +104,10 @@ if __name__ == "__main__":
             red()
             if flag == 0:
                 # Pick the audio
+<<<<<<< HEAD
+=======
+                nonlocal randomMode
+>>>>>>> 203082c697aba81f597ab789b53b467277cdf318
                 if randomMode:
                     print("Random")
                 # Start threaded functions
