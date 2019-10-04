@@ -125,6 +125,6 @@ if __name__ == "__main__":
         if mute == False: # Mute button has been pushed
             muted()
 
-        random = GPIO.input(randomPin)
-        if random == False # Random mode button has been pushed
+        randomPush = GPIO.input(randomPin)
+        if randomPush == False # Random mode button has been pushed
             togRandom()
