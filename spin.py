@@ -35,15 +35,15 @@ randomMode = False
 def green():
     for _ in range(2):
         GPIO.output(greenLEDPin, GPIO.HIGH)
-        sleep(1)
+        sleep(.5)
         GPIO.output(greenLEDPin, GPIO.LOW)
-        sleep(1)
+        sleep(.5)
 
 # Double blink red
 def red():
     for _ in range(2):
         GPIO.output(redLEDPin, GPIO.HIGH)
-        sleep(.5)
+        sleep(.25)
         GPIO.output(redLEDPin, GPIO.LOW)
         sleep(.25)
 
@@ -52,6 +52,7 @@ def bones():
     audio = "./audio/bones.mp3"
     if randomMode:
         try:
+            nonlocal audio
             print(random.choice(os.listdir("./audio/")))
             print("Audio set to: " + audio)
         except:
