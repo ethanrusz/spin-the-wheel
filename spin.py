@@ -12,7 +12,6 @@ doorPin = 22
 killPin = 15
 mutePin = 37
 randomPin = 13
-audio = "./audio/bones.mp3"
 
 # Configure board and set warnings
 GPIO.setwarnings(False)
@@ -98,15 +97,13 @@ if __name__ == "__main__":
         # Respond to door state
         if doorOpen == False: # Door closed
             if flag == 1:
+                audio = "./audio/bones.mp3"
                 green()
                 flag = 0
         else: # Door is opened
             red()
             if flag == 0:
                 # Pick the audio
-                global audio
-                if not randomMode:
-                    audio = "./audio/bones.mp3"
                 if randomMode:
                     print("Random")
                 # Start threaded functions
