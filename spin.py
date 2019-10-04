@@ -85,11 +85,11 @@ def muted():
 # Toggle random mode
 def togRandom():
     if not randomMode:
-        randomMode = True
+        global randomMode = True
         print("Random Mode on")
         green()
     if randomMode:
-        randomMode = False
+        global randomMode = False
         red()
         print("Random Mode off")
 
