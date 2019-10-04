@@ -51,7 +51,7 @@ def red():
 def bones():
     if randomMode:
         try:
-            audio = random.choice(os.listdir("./audio/"))
+            print(random.choice(os.listdir("./audio/")))
             print("Audio set to: " + audio)
         except:
             print("Oops! Something went wrong. Reverting to Classic Mode.")
