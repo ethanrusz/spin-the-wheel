@@ -30,7 +30,7 @@ GPIO.setup(randomPin, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Toggle random mode 
 # Flag to track audio
 flag = 1
 randomMode = False
-audio = "./audio/bones.mp3"
+audioName = "./audio/bones.mp3"
 
 # Double blink green
 def green():
@@ -51,14 +51,14 @@ def red():
 # Pick a random
 def pickAudio():
     if not randomMode:
-        audio = "./audio/bones.mp3"
+        audioName = "./audio/bones.mp3"
     if randomMode:
-        audio = random.choice(os.listdir("./audio/"))
-        print("Selected file: " + audio)
+        audioName = random.choice(os.listdir("./audio/"))
+        print("Selected file: " + audioName)
 
 # Play audio file
 def bones():
-    os.system("mpg123 " + audio)
+    os.system("mpg123 " + audioName)
 
 # Strobe red and green, then exit
 def exit():
