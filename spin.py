@@ -101,11 +101,12 @@ if __name__ == "__main__":
                 flag = 0
         else: # Door is opened
             red()
-            if not randomMode:
-                audio = "./audio/bones.mp3"
-            if randomMode:
-                print("Random")
             if flag == 0:
+                # Pick the audio
+                if not randomMode:
+                    audio = "./audio/bones.mp3"
+                if randomMode:
+                    print("Random")
                 # Start threaded functions
                 redPro.start()
                 bonesPro.start()
