@@ -92,8 +92,8 @@ def togRandom():
         return
     if randomMode:
         randomMode = False
-        red()
         print("Random Mode off.")
+        red()
 
 # Confirm code is under main function
 if __name__ == "__main__":
