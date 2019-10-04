@@ -49,6 +49,7 @@ def red():
 
 # Play audio file
 def bones():
+    audio = "./audio/bones.mp3"
     if randomMode:
         try:
             print(random.choice(os.listdir("./audio/")))
@@ -56,9 +57,7 @@ def bones():
         except:
             print("Oops! Something went wrong. Reverting to Classic Mode.")
             togRandom()
-    else:
-        audio = "./audio/bones.mp3"
-    # os.system("mpg123 " + audio)
+    os.system("mpg123 " + audio)
 
 # Strobe red and green, then exit
 def exit():
