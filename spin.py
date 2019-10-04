@@ -51,14 +51,14 @@ def red():
 def bones():
     if randomMode:
         try:
-            audio = random.choice(os.listdir("./audio"))
+            audio = random.choice(os.listdir("./audio/"))
             print("Audio set to: " + audio)
         except:
-            print("Oops! Something went wrong.\nReverting to Classic Mode")
+            print("Oops! Something went wrong. Reverting to Classic Mode.")
             togRandom()
     else:
         audio = "./audio/bones.mp3"
-    os.system("mpg123 " + audio)
+    # os.system("mpg123 " + audio)
 
 # Strobe red and green, then exit
 def exit():
@@ -87,13 +87,13 @@ def togRandom():
     global randomMode
     if not randomMode:
         randomMode = True
-        print("Random Mode on")
+        print("Random Mode on.")
         green()
         return
     if randomMode:
         randomMode = False
         red()
-        print("Random Mode off")
+        print("Random Mode off.")
 
 # Confirm code is under main function
 if __name__ == "__main__":
