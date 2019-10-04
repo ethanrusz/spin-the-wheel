@@ -12,6 +12,7 @@ doorPin = 22
 killPin = 15
 mutePin = 37
 randomPin = 13
+audio = "./audio/bones.mp3"
 
 # Configure board and set warnings
 GPIO.setwarnings(False)
