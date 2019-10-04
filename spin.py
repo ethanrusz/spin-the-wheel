@@ -50,6 +50,7 @@ def red():
 
 # Pick a random
 def pickAudio():
+    global audioName
     if not randomMode:
         audioName = "./audio/bones.mp3"
     if randomMode:
