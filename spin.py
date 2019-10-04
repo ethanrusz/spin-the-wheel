@@ -105,8 +105,8 @@ if __name__ == "__main__":
             if flag == 0:
                 # Pick the audio
                 if randomMode:
-                    audio = random.choose(os.listdir("./audio/"))
-                    print("Audio set to " + audio + ".")
+                    file = random.choose(os.listdir("./audio/"))
+                    print("Audio set to " + file + ".")
                 # Start threaded functions
                 redPro.start()
                 bonesPro.start()
