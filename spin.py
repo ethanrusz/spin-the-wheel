@@ -89,7 +89,7 @@ def togRandom():
         print("Random Mode on")
         green()
     if randomMode:
-        randomMode False
+        randomMode = False
         red()
         print("Random Mode off")
 
