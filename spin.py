@@ -104,6 +104,7 @@ if __name__ == "__main__":
             red()
             if flag == 0:
                 # Pick the audio
+                global audio
                 if not randomMode:
                     audio = "./audio/bones.mp3"
                 if randomMode:
