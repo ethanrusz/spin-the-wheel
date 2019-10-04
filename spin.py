@@ -53,7 +53,7 @@ def pickAudio():
     if not randomMode:
         audio = "./audio/bones.mp3"
     if randomMode:
-        random.choice(os.listdir("./audio/"))
+        audio = random.choice(os.listdir("./audio/"))
         print("Selected file: " + audio)
 
 # Play audio file
