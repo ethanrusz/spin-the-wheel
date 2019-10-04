@@ -30,6 +30,7 @@ GPIO.setup(randomPin, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Toggle random mode 
 # Flag to track audio
 flag = 1
 randomMode = False
+audio = "./audio/bones.mp3"
 
 # Double blink green
 def green():
@@ -47,16 +48,16 @@ def red():
         GPIO.output(redLEDPin, GPIO.LOW)
         sleep(.25)
 
+# Pick a random
+def pickAudio():
+    if not randomMode:
+        audio = "./audio/bones.mp3"
+    if randomMode:
+        random.choice(os.listdir("./audio/"))
+        print("Selected file: " + audio)
+
 # Play audio file
 def bones():
-    audio = "./audio/bones.mp3"
-    if randomMode:
-        # try:
-        audio = random.choice(os.listdir("./audio/"))
-        print("Audio set to: " + audio)
-        # except:
-            # print("Oops! Something went wrong. Reverting to Classic Mode.")
-            # togRandom()
     os.system("mpg123 " + audio)
 
 # Strobe red and green, then exit
@@ -109,6 +110,7 @@ if __name__ == "__main__":
                 flag = 0
         else: # Door is opened
             red()
+            pickAudio()
             if flag == 0:
                 # Start threaded functions
                 redPro.start()
