@@ -105,8 +105,8 @@ if __name__ == "__main__":
             if flag == 0:
                 # Pick the audio
                 if randomMode:
-                    randomAudio = random.choice(os.listdir("./audio/"))
-                    print(randomAudio)
+                    audio = random.choice(os.listdir("./audio/"))
+                    print("Audio set to " + audio + ".")
                 # Start threaded functions
                 redPro.start()
                 bonesPro.start()
@@ -123,6 +123,6 @@ if __name__ == "__main__":
         if mute == False: # Mute button has been pushed
             muted()
 
-        random = GPIO.input(randomPin)
-        if random == False: # Random mode button has been pushed
+        randomIn = GPIO.input(randomPin)
+        if randomIn == False: # Random mode button has been pushed
             togRandom()
