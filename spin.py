@@ -78,12 +78,12 @@ def togRandom():
     global randomMode
     if not randomMode:
         randomMode = True
-        print("Random Mode on.")
+        print("[" + u'\u2713' "] Random Mode on.")
         green()
         return
     if randomMode:
         randomMode = False
-        print("Random Mode off.")
+        print("[" + u'\u2717' + "] Random Mode off.")
         red()
 
 # Confirm code is under main function
