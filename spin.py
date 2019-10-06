@@ -105,8 +105,11 @@ if __name__ == "__main__":
             if flag == 0:
                 # Pick the audio
                 if randomMode:
-                    audio = random.choice(os.listdir("./audio/"))
-                    print("Audio set to " + audio + ".")
+                    try:
+                        audio = random.choice(os.listdir("./audio/"))
+                        print("Audio set to " + audio + ".")
+                    except:
+                        "Oops! Something went wrong. Reverting to classic mode."
                 # Start threaded functions
                 redPro.start()
                 bonesPro.start()
