@@ -56,6 +56,7 @@ def red():
 # Play audio file
 def bones():
     os.system("mpg123 ./audio/" + audio)
+    print(flag)
 
 # Strobe red and green, then exit
 def exit():
