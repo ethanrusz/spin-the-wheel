@@ -47,7 +47,7 @@ def red():
         GPIO.output(redLEDPin, GPIO.LOW)
         sleep(.25)
 
-    while flag == 0:
+    while bonesPro.isAlive():
         GPIO.output(redLEDPin, GPIO.HIGH)
         sleep(.25)
         GPIO.output(redLEDPin, GPIO.LOW)
@@ -117,8 +117,8 @@ if __name__ == "__main__":
                     except:
                         "Oops! Something went wrong. Reverting to classic mode."
                 # Start threaded functions
-                redPro.start()
                 bonesPro.start()
+                redPro.start()
                 # Join threads to sync blinking
                 redPro.join()
                 bonesPro.join()
