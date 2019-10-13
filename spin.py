@@ -55,14 +55,6 @@ def red():
 
 # Play audio file
 def bones():
-    # Pick the audio
-    if randomMode:
-        try:
-            audio = random.choice(os.listdir("./audio/"))
-            print("Audio set to " + audio + ".")
-        except:
-            "Oops! Something went wrong. Reverting to classic mode."
-            
     os.system("mpg123 ./audio/" + audio)
 
 # Strobe red and green, then exit
@@ -117,6 +109,13 @@ if __name__ == "__main__":
         else: # Door is opened
             red()
             if flag == 0:
+                # Pick the audio
+                if randomMode:
+                    try:
+                        audio = random.choice(os.listdir("./audio/"))
+                        print("Audio set to " + audio + ".")
+                    except:
+                        "Oops! Something went wrong. Reverting to classic mode."
                 # Start threaded functions
                 redPro.start()
                 bonesPro.start()
