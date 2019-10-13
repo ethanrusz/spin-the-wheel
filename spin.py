@@ -47,7 +47,7 @@ def red():
         GPIO.output(redLEDPin, GPIO.LOW)
         sleep(.25)
 
-    while bonesPro.isAlive():
+    while bonesPro.is_alive():
         GPIO.output(redLEDPin, GPIO.HIGH)
         sleep(.25)
         GPIO.output(redLEDPin, GPIO.LOW)
