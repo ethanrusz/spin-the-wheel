@@ -47,7 +47,7 @@ def red():
         GPIO.output(redLEDPin, GPIO.LOW)
         sleep(.25)
 
-    while flag == 1:
+    while flag == 0:
         GPIO.output(redLEDPin, GPIO.HIGH)
         sleep(.25)
         GPIO.output(redLEDPin, GPIO.LOW)
@@ -56,7 +56,6 @@ def red():
 # Play audio file
 def bones():
     os.system("mpg123 ./audio/" + audio)
-    print(flag)
 
 # Strobe red and green, then exit
 def exit():
