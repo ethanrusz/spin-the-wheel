@@ -47,12 +47,6 @@ def red():
         GPIO.output(redLEDPin, GPIO.LOW)
         sleep(.25)
 
-    while bonesPro.is_alive():
-        GPIO.output(redLEDPin, GPIO.HIGH)
-        sleep(.25)
-        GPIO.output(redLEDPin, GPIO.LOW)
-        sleep(.25)
-
 # Play audio file
 def bones():
     os.system("mpg123 ./audio/" + audio)
@@ -118,9 +112,10 @@ if __name__ == "__main__":
                         "Oops! Something went wrong. Reverting to classic mode."
                 # Start threaded functions
                 bonesPro.start()
-                redPro.start()
-                # Join threads to sync blinking
-                redPro.join()
+                # Blink red light while audio plays
+                while bonesPro.is_alive():
+                    red()
+                # Wait for audio to end
                 bonesPro.join()
             flag = 1
 
