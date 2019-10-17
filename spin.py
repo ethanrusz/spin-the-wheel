@@ -27,7 +27,7 @@ GPIO.setup(killPin, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Kill Button
 GPIO.setup(mutePin, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Mute Button
 GPIO.setup(randomPin, GPIO.IN, pull_up_down = GPIO.PUD_UP) # Toggle random mode Button
 
-# Flag to track audio
+# Flag to track audio - Do not alter these values manually
 flag = 1
 randomMode = False
 
