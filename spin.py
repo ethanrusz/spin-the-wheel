@@ -49,7 +49,7 @@ def red():
 
 # Play audio file
 def bones():
-    os.system("mpg123 ./audio/" + audio)
+    os.system("mpg123 audio)
 
 # Strobe red and green, then exit
 def exit():
@@ -97,7 +97,7 @@ if __name__ == "__main__":
         # Respond to door state
         if doorOpen == False: # Door closed
             if flag == 1:
-                audio = "/defaultAudio/bones.mp3"
+                audio = "./defaultAudio/bones.mp3"
                 green()
                 flag = 0
         else: # Door is opened
@@ -106,7 +106,7 @@ if __name__ == "__main__":
                 # Pick the audio
                 if randomMode:
                     try:
-                        audio = ("/audio/" + random.choice(os.listdir("./audio/")))
+                        audio = ("./audio/" + random.choice(os.listdir("./audio/")))
                         print("Audio set to " + audio + ".")
                     except:
                         "Oops! Something went wrong. Reverting to classic mode."
